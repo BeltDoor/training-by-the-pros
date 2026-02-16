@@ -3,205 +3,714 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Training By The Professionals - Red Cross Certified CPR, First Aid, AED, and BLS training by firefighters and first responders in Northeast Ohio.">
+    <meta name="description" content="Training By The Professionals - Red Cross Certified CPR, First Aid, AED, and BLS training by active firefighters and first responders in Northeast Ohio.">
+    <meta name="keywords" content="CPR training, First Aid, BLS certification, AED training, Munroe Falls Ohio, Red Cross certified, firefighter instructors">
     <title>Training By The Professionals | CPR, First Aid & BLS Training</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Training By The Professionals",
+        "description": "Red Cross Certified CPR, First Aid, AED, and BLS training by firefighters and first responders.",
+        "telephone": "(330) 608-3971",
+        "email": "trainingxthepros@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "postOfficeBoxNumber": "191",
+            "addressLocality": "Munroe Falls",
+            "addressRegion": "OH",
+            "postalCode": "44262",
+            "addressCountry": "US"
+        },
+        "areaServed": "Northeast Ohio"
+    }
+    </script>
+    <style>
+        :root {
+            --midnight: #0c1220;
+            --navy: #131c2e;
+            --slate: #1e293b;
+            --crimson: #c62828;
+            --crimson-dark: #a51d1d;
+            --crimson-bright: #e53935;
+            --cream: #faf8f4;
+            --warm-white: #f7f5f0;
+            --white: #ffffff;
+            --text-dark: #1a1f2e;
+            --text-body: #4a5568;
+            --text-muted: #718096;
+            --border: #e8e5de;
+            --gold: #d4a437;
+            --success: #16a34a;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Lora', serif;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s var(--ease); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.15rem, 2vw, 1.35rem); }
+
+        .skip-link {
+            position: absolute; top: -100px; left: 16px; background: var(--crimson); color: white;
+            padding: 8px 16px; z-index: 9999; border-radius: 0 0 8px 8px; font-family: var(--font-display);
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ---- Buttons ---- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 32px; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+            border-radius: 50px; border: 2px solid transparent; cursor: pointer; transition: all 0.3s var(--ease);
+            white-space: nowrap;
+        }
+        .btn-primary { background: var(--crimson); color: white; border-color: var(--crimson); }
+        .btn-primary:hover { background: var(--crimson-dark); border-color: var(--crimson-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(198,40,40,0.3); }
+        .btn-outline { background: transparent; color: var(--crimson); border-color: var(--crimson); }
+        .btn-outline:hover { background: var(--crimson); color: white; transform: translateY(-2px); }
+        .btn-outline-light { background: transparent; color: white; border-color: rgba(255,255,255,0.4); }
+        .btn-outline-light:hover { background: white; color: var(--crimson); border-color: white; }
+        .btn-block { width: 100%; }
+
+        /* ---- Section Tag ---- */
+        .section-tag {
+            display: inline-block; font-family: var(--font-display); font-size: 0.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--crimson); margin-bottom: 16px;
+            position: relative; padding-left: 40px;
+        }
+        .section-tag::before {
+            content: ''; position: absolute; left: 0; top: 50%; width: 28px; height: 2px;
+            background: var(--crimson); transform: translateY(-50%);
+        }
+        .section-tag-light { color: rgba(255,255,255,0.7); }
+        .section-tag-light::before { background: rgba(255,255,255,0.3); }
+
+        .section-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
+        .section-header .section-tag { padding-left: 0; }
+        .section-header .section-tag::before { display: none; }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; }
+        .section-header-light h2 { color: white; }
+        .section-header-light p { color: rgba(255,255,255,0.7); }
+
+        /* ---- Navbar ---- */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 18px 0; transition: all 0.35s var(--ease);
+        }
+        .navbar.scrolled { background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.06); padding: 12px 0; }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; }
+
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px; font-family: var(--font-display);
+            font-weight: 700; font-size: 1.15rem; color: white; z-index: 1001;
+        }
+        .navbar.scrolled .nav-logo { color: var(--text-dark); }
+        .nav-logo i { font-size: 1.4rem; color: var(--crimson-bright); }
+
+        .nav-menu { display: flex; align-items: center; gap: 36px; }
+        .nav-link {
+            font-family: var(--font-display); font-weight: 500; font-size: 0.9rem;
+            color: rgba(255,255,255,0.85); position: relative; padding: 4px 0;
+        }
+        .navbar.scrolled .nav-link { color: var(--text-body); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+            background: var(--crimson); transition: width 0.3s var(--ease);
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover { color: white; }
+        .navbar.scrolled .nav-link:hover { color: var(--crimson); }
+
+        .nav-phone-btn {
+            display: flex; align-items: center; gap: 8px; font-family: var(--font-display);
+            font-weight: 700; font-size: 0.85rem; color: white; background: var(--crimson);
+            padding: 10px 22px; border-radius: 50px; transition: all 0.3s var(--ease); z-index: 1001;
+        }
+        .nav-phone-btn:hover { background: var(--crimson-dark); transform: translateY(-1px); }
+
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; flex-direction: column; gap: 5px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s var(--ease); border-radius: 2px; }
+        .navbar.scrolled .nav-toggle span { background: var(--text-dark); }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .nav-menu-phone { display: none; }
+
+        /* ---- Hero ---- */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; align-items: center;
+            background: var(--midnight); overflow: hidden; padding: 120px 0 80px;
+        }
+        .hero-bg {
+            position: absolute; inset: 0; overflow: hidden;
+        }
+        .hero-grain {
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 1;
+        }
+        .hero-glow {
+            position: absolute; width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(198,40,40,0.08) 0%, transparent 70%);
+            top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0;
+        }
+        .pulse-svg {
+            position: absolute; top: 50%; left: -5%; width: 110%; height: 200px;
+            transform: translateY(-50%); z-index: 0; opacity: 0.6;
+        }
+        .pulse-bg { stroke: rgba(198,40,40,0.06); stroke-width: 1.5; fill: none; }
+        .pulse-glow {
+            stroke: rgba(198,40,40,0.35); stroke-width: 2; fill: none;
+            filter: drop-shadow(0 0 8px rgba(198,40,40,0.5));
+            stroke-dasharray: 200 1600; animation: pulse-travel 5s linear infinite;
+        }
+        @keyframes pulse-travel { 0% { stroke-dashoffset: 1800; } 100% { stroke-dashoffset: 0; } }
+
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 820px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px); padding: 10px 24px; border-radius: 50px; color: rgba(255,255,255,0.9);
+            font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; margin-bottom: 28px;
+            border: 1px solid rgba(255,255,255,0.1); animation: fadeUp 0.6s 0.1s both var(--ease);
+        }
+        .hero-badge i { color: var(--gold); }
+
+        .hero h1 { color: white; margin-bottom: 20px; animation: fadeUp 0.6s 0.2s both var(--ease); }
+        .hero-sub {
+            font-size: 1.2rem; color: rgba(255,255,255,0.75); margin-bottom: 40px;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+            animation: fadeUp 0.6s 0.35s both var(--ease);
+        }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; animation: fadeUp 0.6s 0.5s both var(--ease); }
+
+        .hero-metrics { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; animation: fadeUp 0.6s 0.65s both var(--ease); }
+        .metric { text-align: center; color: white; }
+        .metric-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; display: inline; line-height: 1; }
+        .metric-plus { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: white; }
+        .metric-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); display: block; margin-top: 6px; font-family: var(--font-display); }
+        .metric-icon { font-size: 2.5rem; color: var(--crimson-bright); display: block; margin-bottom: 2px; }
+        .metric-divider { width: 1px; background: rgba(255,255,255,0.12); align-self: stretch; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---- Trust Bar ---- */
+        .trust-bar { background: var(--crimson); padding: 16px 0; }
+        .trust-bar-inner {
+            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+            font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: white;
+        }
+        .trust-bar-inner span { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+        .trust-bar-inner i { opacity: 0.8; }
+
+        /* ---- About ---- */
+        .about { padding: 100px 0; background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
+        .about-text h2 { margin-bottom: 24px; }
+        .about-lead { font-size: 1.15rem; font-weight: 500; color: var(--text-dark); margin-bottom: 16px; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+        .about-feature {
+            display: flex; align-items: center; gap: 10px; font-family: var(--font-display);
+            font-size: 0.9rem; font-weight: 500; color: var(--text-dark);
+        }
+        .about-feature i { color: var(--success); font-size: 1rem; }
+
+        .about-card {
+            background: var(--midnight); border-radius: 16px; padding: 40px 32px; position: relative;
+            overflow: hidden;
+        }
+        .about-card-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--crimson); }
+        .about-card-quote-icon { font-size: 1.5rem; color: var(--crimson-bright); opacity: 0.5; margin-bottom: 16px; }
+        .about-card-quote {
+            font-size: 1.25rem; font-style: italic; color: white; line-height: 1.6; margin-bottom: 28px;
+        }
+        .about-card-types { display: flex; flex-wrap: wrap; gap: 16px; }
+        .about-card-types span {
+            display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.65);
+            font-family: var(--font-display); font-size: 0.8rem; font-weight: 500;
+        }
+        .about-card-types i { color: var(--crimson-bright); font-size: 0.85rem; }
+
+        /* ---- Courses ---- */
+        .courses { padding: 100px 0; background: var(--cream); }
+        .courses-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+        .course-card {
+            background: var(--white); border-radius: 16px; padding: 36px 28px; position: relative;
+            border: 2px solid transparent; transition: all 0.35s var(--ease);
+        }
+        .course-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-color: var(--border); }
+        .course-featured { border-color: var(--crimson); }
+        .course-featured:hover { border-color: var(--crimson); box-shadow: 0 20px 50px rgba(198,40,40,0.12); }
+        .course-badge {
+            position: absolute; top: -1px; right: 24px; background: var(--crimson); color: white;
+            font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; padding: 6px 16px; border-radius: 0 0 8px 8px;
+        }
+
+        .course-icon {
+            width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center;
+            justify-content: center; margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-bright));
+        }
+        .course-icon i { font-size: 1.4rem; color: white; }
+        .course-card h3 { margin-bottom: 8px; }
+        .course-card > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; }
+        .course-card ul { margin-bottom: 24px; }
+        .course-card li {
+            display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 0.9rem;
+            color: var(--text-body); border-bottom: 1px solid var(--border);
+            font-family: var(--font-display); font-weight: 400;
+        }
+        .course-card li:last-child { border-bottom: none; }
+        .course-card li::before {
+            content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            color: var(--success); font-size: 0.75rem; flex-shrink: 0;
+        }
+
+        /* ---- How It Works ---- */
+        .how-it-works { padding: 100px 0; background: var(--white); }
+        .steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; max-width: 900px; margin: 0 auto; }
+
+        .step { text-align: center; flex: 1; position: relative; padding: 0 20px; }
+        .step-number {
+            font-family: var(--font-display); font-size: 0.75rem; font-weight: 700;
+            color: var(--crimson); letter-spacing: 2px; margin-bottom: 16px;
+        }
+        .step-icon {
+            width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 20px;
+            background: var(--cream); display: flex; align-items: center; justify-content: center;
+            border: 2px solid var(--border); transition: all 0.3s var(--ease);
+        }
+        .step:hover .step-icon { border-color: var(--crimson); background: rgba(198,40,40,0.05); }
+        .step-icon i { font-size: 1.5rem; color: var(--crimson); }
+        .step h3 { margin-bottom: 8px; }
+        .step p { font-size: 0.9rem; color: var(--text-muted); max-width: 240px; margin: 0 auto; }
+
+        .step-connector {
+            width: 80px; height: 2px; background: var(--border); margin-top: 52px; flex-shrink: 0;
+        }
+
+        /* ---- Why Us ---- */
+        .why-us { padding: 100px 0; background: var(--midnight); position: relative; overflow: hidden; }
+        .why-us::after {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .why-us .container { position: relative; z-index: 1; }
+
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
+        .why-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 32px 24px; text-align: center; transition: all 0.35s var(--ease);
+        }
+        .why-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+        .why-icon {
+            width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 16px;
+            background: var(--crimson); display: flex; align-items: center; justify-content: center;
+        }
+        .why-icon i { font-size: 1.25rem; color: white; }
+        .why-card h3 { color: white; margin-bottom: 10px; font-size: 1.1rem; }
+        .why-card p { color: rgba(255,255,255,0.65); margin: 0; font-size: 0.9rem; }
+
+        .testimonial-box {
+            text-align: center; max-width: 640px; margin: 0 auto; padding: 36px;
+            background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);
+        }
+        .testimonial-box > i { font-size: 1.5rem; color: var(--crimson-bright); margin-bottom: 16px; }
+        .testimonial-box blockquote {
+            font-size: 1.35rem; color: white; font-style: italic; font-family: var(--font-body);
+            font-weight: 400; margin: 0; line-height: 1.6;
+        }
+
+        /* ---- Join Team ---- */
+        .join-team { padding: 100px 0; background: var(--warm-white); }
+        .join-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
+        .join-text h2 { margin-bottom: 20px; }
+        .join-lead { font-size: 1.1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 12px; }
+        .join-requirements {
+            background: var(--white); padding: 24px; border-radius: 12px; margin: 24px 0;
+            border: 1px solid var(--border);
+        }
+        .join-requirements h4 { margin-bottom: 14px; font-size: 0.95rem; }
+        .requirements-list { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+        .requirements-list span {
+            display: flex; align-items: center; gap: 8px; font-family: var(--font-display);
+            font-size: 0.85rem; font-weight: 500; color: var(--text-body);
+        }
+        .requirements-list i { color: var(--success); font-size: 0.8rem; }
+
+        .join-card {
+            background: var(--midnight); border-radius: 16px; padding: 60px 40px; text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: 12px;
+        }
+        .join-card > i { font-size: 4rem; color: var(--crimson); opacity: 0.3; }
+        .join-card > p { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: white; margin: 0; }
+        .join-card > span { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+        /* ---- Contact ---- */
+        .contact { padding: 100px 0; background: var(--cream); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-card {
+            display: flex; gap: 16px; background: var(--white); padding: 22px; border-radius: 12px;
+            border: 1px solid var(--border); transition: all 0.3s var(--ease);
+        }
+        .contact-card:hover { transform: translateX(6px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .contact-card-icon {
+            width: 50px; height: 50px; border-radius: 12px; background: var(--crimson);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .contact-card-icon i { font-size: 1.1rem; color: white; }
+        .contact-card h4 { font-size: 0.95rem; margin-bottom: 2px; }
+        .contact-card a { color: var(--crimson); font-weight: 600; font-size: 0.95rem; font-family: var(--font-display); }
+        .contact-card a:hover { color: var(--crimson-dark); }
+        .contact-card p { color: var(--text-muted); font-size: 0.85rem; margin: 3px 0 0; }
+
+        .contact-form-wrap {
+            background: var(--white); padding: 36px; border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .contact-form { display: flex; flex-direction: column; gap: 18px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-group label {
+            font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; color: var(--text-dark);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px;
+            font-family: var(--font-body); font-size: 0.95rem; transition: all 0.3s var(--ease);
+            background: var(--cream); color: var(--text-dark);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--crimson); background: var(--white);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group input.invalid, .form-group select.invalid { border-color: var(--crimson-bright); }
+        .form-group input.valid { border-color: var(--success); }
+
+        .form-message {
+            padding: 16px 20px; border-radius: 10px; display: flex; align-items: flex-start; gap: 12px;
+            font-family: var(--font-display); font-size: 0.9rem; animation: fadeUp 0.3s var(--ease);
+        }
+        .form-message-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        .form-message-error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+        .form-message p { margin: 0; line-height: 1.5; }
+
+        /* ---- Footer ---- */
+        .footer { background: var(--midnight); color: white; padding: 72px 0 28px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
+        .footer-logo {
+            display: flex; align-items: center; gap: 10px; font-family: var(--font-display);
+            font-weight: 700; font-size: 1.1rem; color: white; margin-bottom: 16px;
+        }
+        .footer-logo i { color: var(--crimson-bright); }
+        .footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.9rem; margin-bottom: 16px; }
+        .footer-cert {
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06);
+            padding: 8px 16px; border-radius: 50px; font-family: var(--font-display);
+            font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.7);
+        }
+        .footer-cert i { color: var(--gold); }
+        .footer h4 { font-size: 1rem; color: white; margin-bottom: 20px; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a { color: rgba(255,255,255,0.55); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .footer ul a:hover { color: white; }
+        .footer ul i { color: var(--crimson); font-size: 0.85rem; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center;
+        }
+        .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.8rem; font-family: var(--font-display); margin: 0; }
+        .footer-tagline { margin-top: 6px !important; font-style: italic; font-family: var(--font-body) !important; }
+
+        /* ---- Back to Top ---- */
+        .back-to-top {
+            position: fixed; bottom: 28px; right: 28px; width: 46px; height: 46px;
+            background: var(--crimson); color: white; border: none; border-radius: 50%;
+            cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s var(--ease);
+            box-shadow: 0 4px 15px rgba(198,40,40,0.3); z-index: 998; font-size: 1rem;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--crimson-dark); transform: translateY(-3px); }
+
+        /* ---- Mobile Call Bar ---- */
+        .mobile-call-bar {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--crimson); z-index: 999; text-align: center;
+        }
+        .mobile-call-bar a {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            color: white; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+            padding: 14px 20px;
+        }
+
+        /* ---- Scroll Animations ---- */
+        .reveal { opacity: 0; transform: translateY(28px); transition: all 0.6s var(--ease); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 1024px) {
+            .courses-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed; inset: 0; background: rgba(12,18,32,0.97); flex-direction: column;
+                align-items: center; justify-content: center; gap: 28px;
+                opacity: 0; visibility: hidden; transition: all 0.35s var(--ease);
+                backdrop-filter: blur(16px);
+            }
+            .nav-menu.active { opacity: 1; visibility: visible; }
+            .nav-menu .nav-link { color: white; font-size: 1.2rem; }
+            .nav-toggle { display: flex; }
+            .nav-toggle.active span { background: white !important; }
+            .nav-phone-btn span { display: none; }
+            .nav-phone-btn { padding: 10px 14px; }
+            .nav-menu-phone { display: block; margin-top: 12px; }
+            .nav-menu-phone a {
+                color: white; font-family: var(--font-display); font-weight: 700;
+                font-size: 1rem; display: flex; align-items: center; gap: 8px;
+                background: var(--crimson); padding: 12px 28px; border-radius: 50px;
+            }
+
+            .hero { min-height: auto; padding: 140px 0 80px; }
+            .hero-metrics { gap: 24px; }
+            .metric-number, .metric-plus { font-size: 2rem; }
+            .metric-icon { font-size: 2rem; }
+
+            .trust-bar-inner { gap: 20px; justify-content: center; }
+
+            .about-grid, .join-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-features { grid-template-columns: 1fr; }
+
+            .courses-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+            .why-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 56px; }
+
+            .steps { flex-direction: column; gap: 0; align-items: center; }
+            .step-connector { width: 2px; height: 40px; margin: 0; }
+            .step { padding: 0; margin-bottom: 0; }
+
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-logo { justify-content: center; }
+            .footer ul a { justify-content: center; }
+
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 52px; }
+            .back-to-top { bottom: 72px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .hero-ctas .btn { width: 100%; max-width: 300px; }
+            .trust-bar-inner { flex-direction: column; gap: 8px; align-items: center; }
+            .contact-form-wrap { padding: 24px 20px; }
+            .contact-card { flex-direction: column; text-align: center; }
+            .contact-card-icon { margin: 0 auto; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
+        <div class="container nav-container">
             <a href="#home" class="nav-logo">
                 <i class="fas fa-heartbeat"></i>
                 <span>Training By The Professionals</span>
             </a>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#courses" class="nav-link">Courses</a></li>
                 <li><a href="#why-us" class="nav-link">Why Us</a></li>
                 <li><a href="#careers" class="nav-link">Join Our Team</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-menu-phone">
+                    <a href="tel:3306083971"><i class="fas fa-phone"></i> (330) 608-3971</a>
+                </li>
             </ul>
-
-            <a href="tel:3306083971" class="nav-phone">
+            <a href="tel:3306083971" class="nav-phone-btn">
                 <i class="fas fa-phone"></i>
                 <span>(330) 608-3971</span>
             </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-bg">
+            <div class="hero-glow"></div>
+            <svg class="pulse-svg" viewBox="0 0 1400 200" preserveAspectRatio="none">
+                <path class="pulse-bg" d="M-200,100 L300,100 L320,100 L340,20 L360,180 L380,45 L400,155 L425,100 L700,100 L720,100 L740,20 L760,180 L780,45 L800,155 L825,100 L1600,100"/>
+                <path class="pulse-glow" d="M-200,100 L300,100 L320,100 L340,20 L360,180 L380,45 L400,155 L425,100 L700,100 L720,100 L740,20 L760,180 L780,45 L800,155 L825,100 L1600,100"/>
+            </svg>
+            <div class="hero-grain"></div>
+        </div>
+        <div class="container hero-content" id="main">
             <div class="hero-badge">
-                <i class="fas fa-certificate"></i>
-                Red Cross Certified
+                <i class="fas fa-certificate"></i> Red Cross Certified Training
             </div>
             <h1>Learn Life-Saving Skills From Those Who Save Lives Daily</h1>
-            <p class="hero-subtitle">CPR, First Aid, AED & BLS Training by Firefighters and First Responders</p>
-            <div class="hero-buttons">
+            <p class="hero-sub">CPR, First Aid, AED & BLS training taught by active firefighters and first responders serving Northeast Ohio.</p>
+            <div class="hero-ctas">
                 <a href="#contact" class="btn btn-primary">Schedule Training</a>
-                <a href="#courses" class="btn btn-secondary">View Courses</a>
+                <a href="tel:3306083971" class="btn btn-outline-light"><i class="fas fa-phone"></i> (330) 608-3971</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <i class="fas fa-users"></i>
-                    <span>1000+</span>
-                    <p>Students Trained</p>
+            <div class="hero-metrics">
+                <div class="metric">
+                    <span class="metric-number" data-target="1000">0</span><span class="metric-plus">+</span>
+                    <span class="metric-label">Students Trained</span>
                 </div>
-                <div class="stat">
-                    <i class="fas fa-award"></i>
-                    <span>100%</span>
-                    <p>Certified Instructors</p>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-number" data-target="100">0</span><span class="metric-plus">%</span>
+                    <span class="metric-label">Certified Instructors</span>
                 </div>
-                <div class="stat">
-                    <i class="fas fa-fire-extinguisher"></i>
-                    <span>Real</span>
-                    <p>First Responders</p>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <i class="fas fa-shield-alt metric-icon"></i>
+                    <span class="metric-label">Active First Responders</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <div class="trust-bar">
+        <div class="container trust-bar-inner">
+            <span><i class="fas fa-certificate"></i> American Red Cross Certified</span>
+            <span><i class="fas fa-users"></i> 1000+ Students Trained</span>
+            <span><i class="fas fa-fire"></i> Active Firefighter Instructors</span>
+            <span><i class="fas fa-map-marker-alt"></i> Serving Northeast Ohio</span>
+        </div>
+    </div>
+
     <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-label">About Us</span>
-                    <h2>Your Local Life-Saving Training Experts</h2>
-                    <p class="lead">At Training By The Professionals, we believe the best way to learn life-saving skills is from those who use them every day.</p>
-                    <p>Our instructors aren't just certified teachers - they're active firefighters, EMTs, paramedics, and first responders who put these skills to work saving lives in our community. When you train with us, you're learning from professionals who have real-world experience in emergency situations.</p>
-                    <p>Based in Munroe Falls, Ohio, we're proud to serve our local community with Red Cross certified training that prepares you to act confidently in an emergency.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Red Cross Certified Programs</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Active First Responder Instructors</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Hands-On Practical Training</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Flexible Local Scheduling</span>
-                        </div>
-                    </div>
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="section-tag reveal">Who We Are</span>
+                <h2 class="reveal">Your Neighbors. Your First Responders. Your Instructors.</h2>
+                <p class="about-lead reveal">At Training By The Professionals, we believe the best way to learn life-saving skills is from those who use them every day.</p>
+                <p class="reveal">Our instructors aren't just certified teachers. They're active firefighters, EMTs, paramedics, and first responders who put these skills to work saving lives in our community. When you train with us, you're learning from professionals who have real-world experience in emergency situations.</p>
+                <p class="reveal">Based in Munroe Falls, Ohio, we serve our local community with Red Cross certified training that prepares you to act confidently in any emergency.</p>
+                <div class="about-features reveal">
+                    <div class="about-feature"><i class="fas fa-check-circle"></i> Red Cross Certified Programs</div>
+                    <div class="about-feature"><i class="fas fa-check-circle"></i> Active First Responder Instructors</div>
+                    <div class="about-feature"><i class="fas fa-check-circle"></i> Hands-On Practical Training</div>
+                    <div class="about-feature"><i class="fas fa-check-circle"></i> Flexible Local Scheduling</div>
                 </div>
-                <div class="about-image">
-                    <div class="image-card">
-                        <div class="image-placeholder">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="quote-card">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"If you want to provide the best training possible, go with the pros."</p>
-                        </div>
+            </div>
+            <div class="about-visual reveal">
+                <div class="about-card">
+                    <div class="about-card-accent"></div>
+                    <i class="fas fa-quote-left about-card-quote-icon"></i>
+                    <p class="about-card-quote">"If you want to provide the best training possible, go with the pros."</p>
+                    <div class="about-card-types">
+                        <span><i class="fas fa-fire-extinguisher"></i> Firefighters</span>
+                        <span><i class="fas fa-ambulance"></i> EMTs</span>
+                        <span><i class="fas fa-medkit"></i> Paramedics</span>
+                        <span><i class="fas fa-stethoscope"></i> EMRs</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
     <section class="courses" id="courses">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Our Courses</span>
-                <h2>Comprehensive Life-Saving Training</h2>
-                <p>Choose from our Red Cross certified courses taught by real first responders</p>
+                <span class="section-tag reveal">Our Courses</span>
+                <h2 class="reveal">Comprehensive Life-Saving Training</h2>
+                <p class="reveal">Red Cross certified courses taught by real first responders</p>
             </div>
-
             <div class="courses-grid">
-                <!-- First Aid Card -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-first-aid"></i>
-                    </div>
+                <div class="course-card reveal">
+                    <div class="course-icon"><i class="fas fa-first-aid"></i></div>
                     <h3>First Aid</h3>
-                    <p class="course-description">Learn to recognize and respond to emergencies with confidence.</p>
-                    <ul class="course-list">
-                        <li><i class="fas fa-check"></i> Recognize & treat emergencies</li>
-                        <li><i class="fas fa-check"></i> Splinting, wrapping & slings</li>
-                        <li><i class="fas fa-check"></i> Bloodborne pathogens</li>
-                        <li><i class="fas fa-check"></i> Choking & shock response</li>
-                        <li><i class="fas fa-check"></i> Burns & soft tissue injuries</li>
-                        <li><i class="fas fa-check"></i> EpiPen & inhaler use</li>
+                    <p>Learn to recognize and respond to emergencies with confidence.</p>
+                    <ul>
+                        <li>Emergency recognition & response</li>
+                        <li>Splinting, bandaging & slings</li>
+                        <li>Choking & shock treatment</li>
+                        <li>EpiPen & inhaler use</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
-
-                <!-- CPR Card -->
-                <div class="course-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="course-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
+                <div class="course-card course-featured reveal reveal-delay-1">
+                    <div class="course-badge">Most Popular</div>
+                    <div class="course-icon"><i class="fas fa-heartbeat"></i></div>
                     <h3>CPR</h3>
-                    <p class="course-description">Master the skills that can restart a heart and save a life.</p>
-                    <ul class="course-list">
-                        <li><i class="fas fa-check"></i> Adults, children & infants</li>
-                        <li><i class="fas fa-check"></i> One & two person rescues</li>
-                        <li><i class="fas fa-check"></i> Evaluate need for CPR</li>
-                        <li><i class="fas fa-check"></i> Proper compression technique</li>
-                        <li><i class="fas fa-check"></i> Clear obstructed airways</li>
-                        <li><i class="fas fa-check"></i> Best practices for breaths</li>
+                    <p>Master the skills that can restart a heart and save a life.</p>
+                    <ul>
+                        <li>Adults, children & infants</li>
+                        <li>Proper compression technique</li>
+                        <li>Airway management</li>
+                        <li>One & two person rescues</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary">Learn More</a>
                 </div>
-
-                <!-- AED Card -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
+                <div class="course-card reveal reveal-delay-2">
+                    <div class="course-icon"><i class="fas fa-bolt"></i></div>
                     <h3>AED</h3>
-                    <p class="course-description">Learn to use automated defibrillators to restore heart rhythm.</p>
-                    <ul class="course-list">
-                        <li><i class="fas fa-check"></i> Adults, children & infants</li>
-                        <li><i class="fas fa-check"></i> Various manufacturers</li>
-                        <li><i class="fas fa-check"></i> When to use an AED</li>
-                        <li><i class="fas fa-check"></i> Solo rescuer scenarios</li>
-                        <li><i class="fas fa-check"></i> Proper pad placement</li>
-                        <li><i class="fas fa-check"></i> Equipment maintenance</li>
+                    <p>Learn to use automated defibrillators to restore heart rhythm.</p>
+                    <ul>
+                        <li>Multiple AED manufacturers</li>
+                        <li>Proper pad placement</li>
+                        <li>Solo rescuer scenarios</li>
+                        <li>Equipment maintenance</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
-
-                <!-- BLS Card -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
+                <div class="course-card reveal reveal-delay-3">
+                    <div class="course-icon"><i class="fas fa-user-md"></i></div>
                     <h3>BLS</h3>
-                    <p class="course-description">Healthcare provider level basic life support certification.</p>
-                    <ul class="course-list">
-                        <li><i class="fas fa-check"></i> Healthcare provider focused</li>
-                        <li><i class="fas fa-check"></i> Team-based resuscitation</li>
-                        <li><i class="fas fa-check"></i> High-quality CPR skills</li>
-                        <li><i class="fas fa-check"></i> AED integration</li>
-                        <li><i class="fas fa-check"></i> Bag-mask ventilation</li>
-                        <li><i class="fas fa-check"></i> Relief of choking</li>
+                    <p>Healthcare provider level basic life support certification.</p>
+                    <ul>
+                        <li>Healthcare provider focused</li>
+                        <li>Team-based resuscitation</li>
+                        <li>Bag-mask ventilation</li>
+                        <li>High-quality CPR integration</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
@@ -209,178 +718,155 @@
         </div>
     </section>
 
-    <!-- Why Us Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">How It Works</span>
+                <h2 class="reveal">Three Steps to Certification</h2>
+            </div>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-list-check"></i></div>
+                    <h3>Choose Your Course</h3>
+                    <p>Pick the training that fits your needs. Individual or group options available.</p>
+                </div>
+                <div class="step-connector reveal"></div>
+                <div class="step reveal reveal-delay-1">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Schedule Your Date</h3>
+                    <p>Flexible scheduling for individuals and groups. We can come to you.</p>
+                </div>
+                <div class="step-connector reveal"></div>
+                <div class="step reveal reveal-delay-2">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-award"></i></div>
+                    <h3>Get Certified</h3>
+                    <p>Complete your hands-on training and receive your Red Cross certification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="why-us" id="why-us">
         <div class="container">
-            <div class="section-header light">
-                <span class="section-label">Why Choose Us</span>
-                <h2>Training That Makes a Difference</h2>
-                <p>Learn from those who use these skills to save lives every day</p>
+            <div class="section-header section-header-light">
+                <span class="section-tag section-tag-light reveal">Why Choose Us</span>
+                <h2 class="reveal">Training That Makes a Real Difference</h2>
+                <p class="reveal">Learn from those who use these skills to save lives every day</p>
             </div>
-
-            <div class="why-us-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fas fa-fire"></i></div>
                     <h3>Real First Responders</h3>
-                    <p>Our instructors are active firefighters, EMTs, and paramedics who bring real-world experience to every class.</p>
+                    <p>Active firefighters, EMTs, and paramedics who bring real-world experience to every class.</p>
                 </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon"><i class="fas fa-certificate"></i></div>
                     <h3>Red Cross Certified</h3>
-                    <p>All our courses meet American Red Cross standards, giving you credentials recognized everywhere.</p>
+                    <p>All courses meet American Red Cross standards. Credentials recognized everywhere.</p>
                 </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-hands"></i>
-                    </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon"><i class="fas fa-hands"></i></div>
                     <h3>Hands-On Learning</h3>
-                    <p>Practice on professional equipment with personalized feedback from instructors who do this for real.</p>
+                    <p>Practice on professional equipment with personalized feedback from real pros.</p>
                 </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Local & Flexible</h3>
-                    <p>Serving Northeast Ohio with convenient scheduling options. We can come to your workplace or organization.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon"><i class="fas fa-users"></i></div>
                     <h3>Small Class Sizes</h3>
-                    <p>Personal attention ensures you master every skill and leave confident in your abilities.</p>
+                    <p>Personal attention ensures you master every skill and leave confident.</p>
                 </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Local & Flexible</h3>
+                    <p>Serving Northeast Ohio. We can come to your workplace or organization.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-3">
+                    <div class="why-icon"><i class="fas fa-heart"></i></div>
                     <h3>Community Focused</h3>
-                    <p>We're not just instructors - we're your neighbors who want to make our community safer.</p>
+                    <p>We're your neighbors who want to make our community safer, one trained person at a time.</p>
                 </div>
             </div>
-
-            <div class="testimonial-highlight">
+            <div class="testimonial-box reveal">
                 <i class="fas fa-quote-left"></i>
-                <blockquote>
-                    "Save a life! There is no better feeling in the world. Be prepared for the next emergency!"
-                </blockquote>
+                <blockquote>"Save a life! There is no better feeling in the world. Be prepared for the next emergency!"</blockquote>
             </div>
         </div>
     </section>
 
-    <!-- Instructors Banner -->
-    <section class="instructors-banner">
-        <div class="container">
-            <div class="banner-content">
-                <h3>Our Instructors Include:</h3>
-                <div class="instructor-types">
-                    <span><i class="fas fa-fire-extinguisher"></i> Firefighters</span>
-                    <span><i class="fas fa-ambulance"></i> EMTs</span>
-                    <span><i class="fas fa-medkit"></i> Paramedics</span>
-                    <span><i class="fas fa-user-shield"></i> First Responders</span>
-                    <span><i class="fas fa-stethoscope"></i> EMRs</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Careers Section -->
-    <section class="careers" id="careers">
-        <div class="container">
-            <div class="careers-content">
-                <div class="careers-text">
-                    <span class="section-label">Join Our Team</span>
-                    <h2>Become an Instructor</h2>
-                    <p class="lead">Are you a firefighter, EMT, paramedic, or first responder? Join our team of professional instructors!</p>
-                    <p>We're looking for dedicated professionals who want to share their life-saving skills with the community. If you're trained as an instructor by the Red Cross and have a passion for teaching, we want to hear from you.</p>
-                    <div class="careers-requirements">
-                        <h4>We're Looking For:</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Firefighters</li>
-                            <li><i class="fas fa-check"></i> EMTs & EMRs</li>
-                            <li><i class="fas fa-check"></i> Paramedics</li>
-                            <li><i class="fas fa-check"></i> First Responders</li>
-                            <li><i class="fas fa-check"></i> Red Cross Certified Instructors</li>
-                        </ul>
-                    </div>
-                    <a href="mailto:trainingxthepros@gmail.com?subject=Instructor%20Application" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Apply Now
-                    </a>
-                </div>
-                <div class="careers-image">
-                    <div class="image-placeholder careers-placeholder">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <p>Teach Life-Saving Skills</p>
+    <section class="join-team" id="careers">
+        <div class="container join-grid">
+            <div class="join-text">
+                <span class="section-tag reveal">Join Our Team</span>
+                <h2 class="reveal">Become an Instructor</h2>
+                <p class="join-lead reveal">Are you a firefighter, EMT, paramedic, or first responder? Share your life-saving skills with the community.</p>
+                <p class="reveal">We're looking for dedicated professionals who want to teach and make a difference. If you're trained as an instructor by the Red Cross and have a passion for helping others, we want to hear from you.</p>
+                <div class="join-requirements reveal">
+                    <h4>We're Looking For:</h4>
+                    <div class="requirements-list">
+                        <span><i class="fas fa-check"></i> Firefighters</span>
+                        <span><i class="fas fa-check"></i> EMTs & EMRs</span>
+                        <span><i class="fas fa-check"></i> Paramedics</span>
+                        <span><i class="fas fa-check"></i> First Responders</span>
+                        <span><i class="fas fa-check"></i> Red Cross Certified Instructors</span>
                     </div>
                 </div>
+                <a href="mailto:trainingxthepros@gmail.com?subject=Instructor%20Application" class="btn btn-primary reveal"><i class="fas fa-paper-plane"></i> Apply Now</a>
+            </div>
+            <div class="join-visual reveal">
+                <div class="join-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <p>Teach Life-Saving Skills</p>
+                    <span>Make a difference in your community</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Get In Touch</span>
-                <h2>Schedule Your Training</h2>
-                <p>Ready to learn life-saving skills? Contact us to schedule your training today.</p>
+                <span class="section-tag reveal">Get In Touch</span>
+                <h2 class="reveal">Schedule Your Training</h2>
+                <p class="reveal">Ready to learn life-saving skills? Contact us today.</p>
             </div>
-
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
+                    <div class="contact-card reveal">
+                        <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+                        <div>
                             <h4>Call Us</h4>
                             <a href="tel:3306083971">(330) 608-3971</a>
                             <p>Mon-Fri: 8am - 6pm</p>
                         </div>
                     </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
+                    <div class="contact-card reveal reveal-delay-1">
+                        <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
                             <h4>Email Us</h4>
                             <a href="mailto:trainingxthepros@gmail.com">trainingxthepros@gmail.com</a>
                             <p>We respond within 24 hours</p>
                         </div>
                     </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
+                    <div class="contact-card reveal reveal-delay-2">
+                        <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
                             <h4>Location</h4>
                             <p>Serving Munroe Falls, OH<br>and surrounding areas</p>
                             <p>P.O. Box 191, Munroe Falls, OH 44262</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
+                <div class="contact-form-wrap reveal">
+                    <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-group">
-                            <label for="name">Your Name</label>
+                            <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Smith">
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" id="email" name="email" required placeholder="john@example.com">
                             </div>
                             <div class="form-group">
@@ -388,7 +874,6 @@
                                 <input type="tel" id="phone" name="phone" placeholder="(330) 555-0123">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="course">Interested In</label>
                             <select id="course" name="course">
@@ -402,37 +887,26 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your training needs..."></textarea>
                         </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#home" class="footer-logo">
-                        <i class="fas fa-heartbeat"></i>
-                        <span>Training By The Professionals</span>
-                    </a>
+                    <a href="#home" class="footer-logo"><i class="fas fa-heartbeat"></i> Training By The Professionals</a>
                     <p>Red Cross certified CPR, First Aid, AED, and BLS training by firefighters and first responders.</p>
-                    <div class="footer-certifications">
-                        <span><i class="fas fa-certificate"></i> Red Cross Certified</span>
-                    </div>
+                    <div class="footer-cert"><i class="fas fa-certificate"></i> Red Cross Certified</div>
                 </div>
-
-                <div class="footer-links">
+                <div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#about">About Us</a></li>
@@ -442,8 +916,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-courses">
+                <div>
                     <h4>Our Courses</h4>
                     <ul>
                         <li><a href="#courses">First Aid Training</a></li>
@@ -452,30 +925,192 @@
                         <li><a href="#courses">BLS Certification</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-contact">
+                <div>
                     <h4>Contact Us</h4>
                     <ul>
                         <li><a href="tel:3306083971"><i class="fas fa-phone"></i> (330) 608-3971</a></li>
                         <li><a href="mailto:trainingxthepros@gmail.com"><i class="fas fa-envelope"></i> trainingxthepros@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Munroe Falls, OH 44262</li>
+                        <li><span style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.55);font-size:0.9rem"><i class="fas fa-map-marker-alt" style="color:var(--crimson);font-size:0.85rem"></i> Munroe Falls, OH 44262</span></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2024 Training By The Professionals. All rights reserved.</p>
+                <p>&copy; 2026 Training By The Professionals. All rights reserved.</p>
                 <p class="footer-tagline">Learn from men and women who save lives daily.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="mobile-call-bar"><a href="tel:3306083971"><i class="fas fa-phone"></i> Call Now &ndash; (330) 608-3971</a></div>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initNavbar();
+        initMobileMenu();
+        initSmoothScroll();
+        initBackToTop();
+        initScrollAnimations();
+        initCounters();
+        initContactForm();
+        initActiveNav();
+    });
+
+    function initNavbar() {
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+    }
+
+    function initMobileMenu() {
+        var toggle = document.getElementById('navToggle');
+        var menu = document.getElementById('navMenu');
+        if (!toggle || !menu) return;
+
+        toggle.addEventListener('click', function() {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        menu.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href === '#') return;
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    var navH = document.getElementById('navbar').offsetHeight;
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - navH;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        });
+    }
+
+    function initBackToTop() {
+        var btn = document.getElementById('backToTop');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            btn.classList.toggle('visible', window.scrollY > 500);
+        });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    function initScrollAnimations() {
+        var els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function(el) { observer.observe(el); });
+    }
+
+    function initCounters() {
+        var nums = document.querySelectorAll('.metric-number[data-target]');
+        if (!nums.length) return;
+        var started = false;
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !started) {
+                    started = true;
+                    nums.forEach(function(el) {
+                        var target = parseInt(el.getAttribute('data-target'));
+                        var duration = 2000;
+                        var start = 0;
+                        var startTime = null;
+                        function step(ts) {
+                            if (!startTime) startTime = ts;
+                            var progress = Math.min((ts - startTime) / duration, 1);
+                            var ease = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.floor(ease * target);
+                            if (progress < 1) requestAnimationFrame(step);
+                            else el.textContent = target;
+                        }
+                        requestAnimationFrame(step);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.hero-metrics'));
+    }
+
+    function initContactForm() {
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = form.querySelector('#name');
+            var email = form.querySelector('#email');
+            var valid = true;
+
+            [name, email].forEach(function(f) { f.classList.remove('invalid', 'valid'); });
+
+            if (!name.value.trim()) { name.classList.add('invalid'); valid = false; }
+            else { name.classList.add('valid'); }
+
+            var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRe.test(email.value)) { email.classList.add('invalid'); valid = false; }
+            else { email.classList.add('valid'); }
+
+            if (!valid) { showMsg('Please fill in all required fields correctly.', 'error'); return; }
+
+            showMsg('Thank you! Your message has been received. We will contact you at ' + email.value + ' soon.', 'success');
+            form.reset();
+            [name, email].forEach(function(f) { f.classList.remove('valid'); });
+        });
+
+        function showMsg(text, type) {
+            var old = form.querySelector('.form-message');
+            if (old) old.remove();
+            var div = document.createElement('div');
+            div.className = 'form-message form-message-' + type;
+            div.innerHTML = '<i class="fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle') + '"></i><p>' + text + '</p>';
+            form.insertBefore(div, form.firstChild);
+            setTimeout(function() {
+                div.style.opacity = '0';
+                div.style.transition = 'opacity 0.3s';
+                setTimeout(function() { div.remove(); }, 300);
+            }, 7000);
+        }
+    }
+
+    function initActiveNav() {
+        var sections = document.querySelectorAll('section[id]');
+        var links = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', function() {
+            var pos = window.scrollY + 120;
+            sections.forEach(function(sec) {
+                var top = sec.offsetTop;
+                var h = sec.offsetHeight;
+                var id = sec.getAttribute('id');
+                if (pos >= top && pos < top + h) {
+                    links.forEach(function(l) {
+                        l.classList.remove('active');
+                        if (l.getAttribute('href') === '#' + id) l.classList.add('active');
+                    });
+                }
+            });
+        });
+    }
+    </script>
 </body>
 </html>
